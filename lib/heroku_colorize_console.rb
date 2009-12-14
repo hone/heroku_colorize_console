@@ -19,14 +19,26 @@
 
 module Heroku::Command
   class Base
+    # rewrite display to use Wirble coloring if option is set
     def display(msg, newline=true)
-      color_message = Wirble::Colorize.colorize(msg)
+      msg = Wirble::Colorize.colorize(msg) if @options and @options[:colorize]
       if newline
-        puts(color_message)
+        puts(msg)
       else
-        print(color_message)
+        print(msg)
         STDOUT.flush
       end
+    end
+  end
+
+  class App
+    alias_method :console_old, :console
+
+    # set option to color output
+    def console
+      @options = Hash.new if @options.nil?
+      @options[:colorize] = true
+      console_old
     end
   end
 end
