@@ -21,6 +21,10 @@ To install:
    bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
+== Thanks
+
+Special thanks goes out to technicalpickles for helping me refactor my code.
+
 == Copyright
 
 Copyright (c) 2009 Terence Lee. See LICENSE for details.
