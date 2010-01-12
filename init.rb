@@ -17,5 +17,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 =end
 
-require 'wirble'
+begin
+  require 'wirble'
+rescue LoadError
+  raise "wirble gem is missing.  Please install wirble: gem install wirble"
+end
 require File.dirname(__FILE__) + '/lib/heroku_colorize_console'
