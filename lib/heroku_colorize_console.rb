@@ -28,6 +28,4 @@ module Heroku::Command
     alias_method :display_without_colorize, :display
     alias_method :display, :display_with_colorize
   end
-as_method :console, :console_with_colorize
-  end
 end
