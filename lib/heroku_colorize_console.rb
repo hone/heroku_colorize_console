@@ -21,7 +21,7 @@ module Heroku::Command
   class Base
     # rewrite display to use Wirble coloring if option is set
     def display_with_colorize(msg, newline=true)
-      msg = Wirble::Colorize.colorize(msg) unless @options and @options[:colorize] == false
+#      msg = Wirble::Colorize.colorize(msg) unless @options and @options[:colorize] == false
       display_without_colorize(msg, newline)
     end
 
